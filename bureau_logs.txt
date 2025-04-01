@@ -1,0 +1,9 @@
+INFO:     [emotion_agent]: Starting agent with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+WARNING:  [emotion_agent]: No endpoints provided. Skipping registration: Agent won't be reachable.
+INFO:     [spotify_agent]: Starting agent with address: agent1qd9s6c0ru2pj42e5qmgxc8q7dhqyx2sf4uqa4qwh8ghcc4q7v5m8utexl0v
+WARNING:  [spotify_agent]: No endpoints provided. Skipping registration: Agent won't be reachable.
+INFO:     [memory_agent]: Starting agent with address: agent1qgeqr84ln3vwnwn8gaaqwtwwy8l4svs2rcg5q8kcfssehwvy77zwchqe588
+WARNING:  [memory_agent]: No endpoints provided. Skipping registration: Agent won't be reachable.
+INFO:     [weather_agent]: Starting agent with address: agent1qfaztc70htxh3rj59lnzhscr8q3482khr6lkzy4t0700mzagydjj59c769m
+WARNING:  [weather_agent]: No endpoints provided. Skipping registration: Agent won't be reachable.
+INFO:     [bureau]: Starting server on http://0.0.0.0:8001 (Press CTRL+C to quit)

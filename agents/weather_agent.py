@@ -11,10 +11,23 @@ load_dotenv()
 
 # Create the agent in a function to avoid import-time initialization
 def create_weather_agent():
-    return Agent(
+    """
+    Create and return the weather agent with endpoints for proper registration.
+    
+    Returns:
+        Agent: The weather agent instance with properly configured endpoints.
+    """
+    # Use a fixed port for the weather agent
+    port = 8103
+    
+    agent = Agent(
         name="weather_agent",
         seed=os.getenv("WEATHER_AGENT_SEED", "weather_agent_seed"),
+        port=port,
+        endpoint=f"http://127.0.0.1:{port}"
     )
+    
+    return agent
 
 # Create a lazy-loaded agent instance
 weather_agent = None
@@ -65,6 +78,22 @@ class WeatherRequest(BaseModel):
     operation: str
     location: str = None
     spotify_agent: str = None
+    callback_id: str = None
+    requester: str = None
+
+# Define response models
+class WeatherResponse(BaseModel):
+    status: str
+    weather_emotion: dict = None
+    error: str = None
+    callback_id: str = None
+
+# Define recommendations request model
+class RecommendationsRequest(BaseModel):
+    operation: str
+    emotion: str
+    requester: str
+    callback_id: str = None
 
 @weather_protocol.on_message(model=WeatherRequest)
 async def handle_weather_request(ctx: Context, sender: str, msg: WeatherRequest):
@@ -77,34 +106,38 @@ async def handle_weather_request(ctx: Context, sender: str, msg: WeatherRequest)
         msg (WeatherRequest): Message containing the weather request.
     """
     operation = msg.operation
+    callback_id = msg.callback_id
+    requester = msg.requester or sender
     
-    if operation == "get_weather_emotion":
+    if operation == "get_weather_emotion" or operation == "get_weather":
         location = msg.location
         
         if not location:
-            await ctx.send(sender, {"error": "Location is required"})
+            response = WeatherResponse(status="error", error="Location is required", callback_id=callback_id)
+            await ctx.send(requester, response.model_dump())
             return
         
         weather_agent_instance = WeatherAgent()
         weather_emotion = weather_agent_instance.get_weather_emotion(location)
         
-        # Send the weather emotion to the sender
-        await ctx.send(sender, {
-            "status": "success",
-            "weather_emotion": weather_emotion
-        })
+        # Send the weather emotion to the requester using model_dump()
+        response = WeatherResponse(status="success", weather_emotion=weather_emotion, callback_id=callback_id)
+        await ctx.send(requester, response.model_dump())
         
-        # If spotify_agent is specified, also send to it
+        # If spotify_agent is specified, also send to it using model_dump()
         spotify_agent = msg.spotify_agent
         if spotify_agent:
-            await ctx.send(spotify_agent, {
-                "operation": "get_recommendations",
-                "emotion": weather_emotion["emotion"],
-                "requester": sender
-            })
+            rec_request = RecommendationsRequest(
+                operation="get_recommendations",
+                emotion=weather_emotion["emotion"],
+                requester=requester,
+                callback_id=callback_id
+            )
+            await ctx.send(spotify_agent, rec_request.model_dump())
     
     else:
-        await ctx.send(sender, {"error": "Invalid operation"})
+        response = WeatherResponse(status="error", error="Invalid operation", callback_id=callback_id)
+        await ctx.send(requester, response.model_dump())
 
 # Get the agent and include the protocol only when needed
 def get_weather_agent():

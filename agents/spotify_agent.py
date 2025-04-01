@@ -12,10 +12,23 @@ load_dotenv()
 
 # Create the agent in a function to avoid import-time initialization
 def create_spotify_agent():
-    return Agent(
+    """
+    Create and return the Spotify agent with endpoints for proper registration.
+    
+    Returns:
+        Agent: The Spotify agent instance with properly configured endpoints.
+    """
+    # Use a fixed port for the Spotify agent
+    port = 8102
+    
+    agent = Agent(
         name="spotify_agent",
         seed=os.getenv("SPOTIFY_AGENT_SEED", "spotify_agent_seed"),
+        port=port,
+        endpoint=f"http://127.0.0.1:{port}"
     )
+    
+    return agent
 
 # Create a lazy-loaded agent instance
 spotify_agent = None
@@ -88,6 +101,15 @@ class PlaylistRequest(BaseModel):
     emotion: str = None
     requester: str = None
 
+# Define response models
+class SpotifyResponse(BaseModel):
+    status: str
+    error: str = None
+    tracks: list = None
+    emotion: str = None
+    playlist: dict = None
+    message: str = None
+
 @spotify_protocol.on_message(model=RecommendationsRequest)
 async def handle_recommendations_request(ctx: Context, sender: str, msg: RecommendationsRequest):
     """
@@ -99,18 +121,16 @@ async def handle_recommendations_request(ctx: Context, sender: str, msg: Recomme
         requester = msg.requester or sender
         
         if not emotion:
-            await ctx.send(requester, {"error": "Emotion is required for recommendations"})
+            response = SpotifyResponse(status="error", error="Emotion is required for recommendations")
+            await ctx.send(requester, response.model_dump())
             return
         
         spotify_agent_instance = SpotifyAgent()
         tracks = spotify_agent_instance.get_recommendations(emotion, limit)
         
-        # Send the recommendations to the requester
-        await ctx.send(requester, {
-            "status": "success",
-            "tracks": tracks,
-            "emotion": emotion
-        })
+        # Send the recommendations to the requester using model_dump()
+        response = SpotifyResponse(status="success", tracks=tracks, emotion=emotion)
+        await ctx.send(requester, response.model_dump())
 
 @spotify_protocol.on_message(model=PlaylistRequest)
 async def handle_playlist_request(ctx: Context, sender: str, msg: PlaylistRequest):
@@ -125,27 +145,25 @@ async def handle_playlist_request(ctx: Context, sender: str, msg: PlaylistReques
         requester = msg.requester or sender
         
         if not user_id:
-            await ctx.send(requester, {"error": "User ID is required for playlist creation"})
+            response = SpotifyResponse(status="error", error="User ID is required for playlist creation")
+            await ctx.send(requester, response.model_dump())
             return
         
         if not track_ids:
-            await ctx.send(requester, {"error": "Track IDs are required for playlist creation"})
+            response = SpotifyResponse(status="error", error="Track IDs are required for playlist creation")
+            await ctx.send(requester, response.model_dump())
             return
         
         spotify_agent_instance = SpotifyAgent()
         playlist = spotify_agent_instance.create_playlist(user_id, playlist_name, track_ids, description)
         
-        # Send the playlist information to the requester
+        # Send the playlist information to the requester using model_dump()
         if playlist:
-            await ctx.send(requester, {
-                "status": "success",
-                "playlist": playlist
-            })
+            response = SpotifyResponse(status="success", playlist=playlist)
+            await ctx.send(requester, response.model_dump())
         else:
-            await ctx.send(requester, {
-                "status": "error",
-                "message": "Failed to create playlist"
-            })
+            response = SpotifyResponse(status="error", message="Failed to create playlist")
+            await ctx.send(requester, response.model_dump())
 
 # Get the agent and include the protocol only when needed
 def get_spotify_agent():

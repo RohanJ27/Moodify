@@ -10,10 +10,23 @@ load_dotenv()
 
 # Create the agent in a function to avoid import-time initialization
 def create_memory_agent():
-    return Agent(
+    """
+    Create and return the memory agent with endpoints for proper registration.
+    
+    Returns:
+        Agent: The memory agent instance with properly configured endpoints.
+    """
+    # Use a fixed port for the memory agent
+    port = 8104
+    
+    agent = Agent(
         name="memory_agent",
         seed=os.getenv("MEMORY_AGENT_SEED", "memory_agent_seed"),
+        port=port,
+        endpoint=f"http://127.0.0.1:{port}"
     )
+    
+    return agent
 
 # Create a lazy-loaded agent instance
 memory_agent = None

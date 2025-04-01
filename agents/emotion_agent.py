@@ -11,10 +11,23 @@ load_dotenv()
 
 # Create the agent in a function to avoid import-time initialization
 def create_emotion_agent():
-    return Agent(
+    """
+    Create and return the emotion agent with endpoints for proper registration.
+    
+    Returns:
+        Agent: The emotion agent instance with properly configured endpoints.
+    """
+    # Use a fixed port for the emotion agent
+    port = 8101
+    
+    agent = Agent(
         name="emotion_agent",
         seed=os.getenv("EMOTION_AGENT_SEED", "emotion_agent_seed"),
+        port=port,
+        endpoint=f"http://127.0.0.1:{port}"
     )
+    
+    return agent
 
 # Create a lazy-loaded agent instance
 emotion_agent = None
@@ -54,6 +67,18 @@ class EmotionRequest(BaseModel):
     text: str = None
     spotify_agent: str = None
 
+# Define a response model
+class EmotionResponse(BaseModel):
+    status: str
+    emotion: str = None
+    error: str = None
+
+# Define a recommendations request model
+class RecommendationsRequest(BaseModel):
+    operation: str
+    emotion: str
+    requester: str
+
 @emotion_protocol.on_message(model=EmotionRequest)
 async def handle_emotion_request(ctx: Context, sender: str, msg: EmotionRequest):
     """
@@ -70,29 +95,31 @@ async def handle_emotion_request(ctx: Context, sender: str, msg: EmotionRequest)
         text = msg.text
         
         if not text:
-            await ctx.send(sender, {"error": "Text is required for emotion classification"})
+            # Use structured response with model_dump() instead of dict()
+            response = EmotionResponse(status="error", error="Text is required for emotion classification")
+            await ctx.send(sender, response.model_dump())
             return
         
         emotion_agent_instance = EmotionAgent()
         emotion = emotion_agent_instance.classify_emotion(text)
         
-        # Send the classified emotion to the sender
-        await ctx.send(sender, {
-            "status": "success",
-            "emotion": emotion
-        })
+        # Send the classified emotion to the sender using model_dump()
+        response = EmotionResponse(status="success", emotion=emotion)
+        await ctx.send(sender, response.model_dump())
         
-        # If spotify_agent is specified, also send to it
+        # If spotify_agent is specified, also send to it using model_dump()
         spotify_agent = msg.spotify_agent
         if spotify_agent:
-            await ctx.send(spotify_agent, {
-                "operation": "get_recommendations",
-                "emotion": emotion,
-                "requester": sender
-            })
+            rec_request = RecommendationsRequest(
+                operation="get_recommendations",
+                emotion=emotion,
+                requester=sender
+            )
+            await ctx.send(spotify_agent, rec_request.model_dump())
     
     else:
-        await ctx.send(sender, {"error": "Invalid operation"})
+        response = EmotionResponse(status="error", error="Invalid operation")
+        await ctx.send(sender, response.model_dump())
 
 # Get the agent and include the protocol only when needed
 def get_emotion_agent():

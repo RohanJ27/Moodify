@@ -1,0 +1,157 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://172.23.211.25:8501
+
+  For better performance, install the Watchdog module:
+
+  $ xcode-select --install
+  $ pip install watchdog
+            
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Found available port 8652 for UI agent (attempt 1)
+Creating UI agent with seed ui_agent_seed_8652_a4809a2a on port 8652
+INFO:     [setup]: Adding testnet funds to agent...
+INFO:     [setup]: Adding testnet funds to agent...complete
+INFO:     [ui_agent]: Starting agent with address: agent1qgusqym6cd6hhf9qla0k26fspha2tmy68ypvsgk87dxysf9tdq3ejngeas2
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8652&address=agent1qgusqym6cd6hhf9qla0k26fspha2tmy68ypvsgk87dxysf9tdq3ejngeas2
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8652 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: Registering on almanac contract...
+UI agent started successfully on port 8652
+INFO:     [uagents.registration]: Registering on almanac contract...complete
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Found available port 8743 for UI agent (attempt 1)
+Creating UI agent with seed ui_agent_seed_8743_1d405427 on port 8743
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Found available port 8926 for UI agent (attempt 1)
+Creating UI agent with seed ui_agent_seed_8926_b674cbbb on port 8926
+INFO:     [setup]: Adding testnet funds to agent...
+INFO:     [setup]: Adding testnet funds to agent...
+INFO:     [setup]: Adding testnet funds to agent...complete
+INFO:     [ui_agent]: Starting agent with address: agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Starting agent with address: agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Starting agent with address: agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8743&address=agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8743&address=agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8743&address=agent1qw84au7vnlukal2ajgvx9t4e57qe834pdu87ev7mvnndlr7qr2yxqfmpxgn
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8743 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8743 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8743 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: Registering on almanac contract...
+UI agent started successfully on port 8743
+INFO:     [setup]: Adding testnet funds to agent...complete
+INFO:     [ui_agent]: Starting agent with address: agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Starting agent with address: agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Starting agent with address: agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8926&address=agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8926&address=agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8926&address=agent1qvmu92g93djurpps5f3twpdj7rqhgalrdu0y8trf4fmskav88xgvyarcn4a
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8926 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8926 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8926 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: Registering on almanac contract...
+INFO:     [uagents.registration]: Registering on almanac contract...complete
+UI agent started successfully on port 8926
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Attempting to use agent system for emotion detection
+Using existing UI agent on port 8926
+Got emotion agent address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Sending emotion request: {'operation': 'classify_emotion', 'text': 'i am feeling really happy since I get to see my friends', 'spotify_agent': None}
+Creating a temporary context for sending
+Sending message to agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6 using context (JSON format)
+Failed with JSON format: No suitable send method found on agent
+Trying with direct dict format
+Failed with dict format: No suitable send method found on agent
+Trying with original request object
+Failed with request object: No suitable send method found on agent
+Failed to send message via context
+No viable method to send messages found
+Using fallback local emotion detection
+Local detection found: happy
+Searching for tracks matching mood: happy
+Using search keywords: happy upbeat cheerful feel good positive uplifting
+SPOTIFY_CLIENT_ID is set (length: 32)
+SPOTIFY_CLIENT_SECRET is set (length: 32)
+Creating Spotify client with Client Credentials flow...
+Successfully obtained access token (prefix: BQC_9pByOx...)
+Successfully connected to Spotify API (got 1 categories)
+Final search query: happy upbeat cheerful feel good positive uplifting genre:pop genre:dance
+Making direct request to Spotify Search API with params: {'q': 'happy upbeat cheerful feel good positive uplifting genre:pop genre:dance', 'type': 'track', 'limit': 20, 'market': 'US'}
+Found 0 tracks matching the mood
+Initial search failed or returned no results. Trying with mood keyword only.
+Found 14 tracks using simple mood search
+INFO:     [uagents.registration]: Registering on almanac contract...complete
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Found available port 8933 for UI agent (attempt 1)
+Creating UI agent with seed ui_agent_seed_8933_a7301917 on port 8933
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Found available port 8992 for UI agent (attempt 1)
+Creating UI agent with seed ui_agent_seed_8992_42910c11 on port 8992
+INFO:     [setup]: Adding testnet funds to agent...
+INFO:     [setup]: Adding testnet funds to agent...
+INFO:     [setup]: Adding testnet funds to agent...complete
+INFO:     [ui_agent]: Starting agent with address: agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Starting agent with address: agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Starting agent with address: agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Starting agent with address: agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Starting agent with address: agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8992&address=agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8992&address=agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8992&address=agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8992&address=agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8992&address=agent1qthr8udmlv2rp5kjsnc03vmtjqa0atglh7lzhq0g0pctc7hgy8prc89vhrq
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8992 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8992 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8992 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8992 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8992 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: Registering on almanac contract...
+UI agent started successfully on port 8992
+Bureau port (8001) is open
+Emotion agent found with address: agent1q0lxneqz4hkygvkk6ut8tpm489vret6mgvuv76z97ahh9c2w588s6fv3ua6
+Using existing UI agent on port 8992
+Searching for tracks matching mood: energetic
+Using search keywords: energetic dance upbeat party workout energizing
+SPOTIFY_CLIENT_ID is set (length: 32)
+SPOTIFY_CLIENT_SECRET is set (length: 32)
+Creating Spotify client with Client Credentials flow...
+Successfully obtained access token (prefix: BQC_9pByOx...)
+Successfully connected to Spotify API (got 1 categories)
+Final search query: energetic dance upbeat party workout energizing genre:dance genre:electronic
+Making direct request to Spotify Search API with params: {'q': 'energetic dance upbeat party workout energizing genre:dance genre:electronic', 'type': 'track', 'limit': 20, 'market': 'US'}
+Found 0 tracks matching the mood
+Initial search failed or returned no results. Trying with mood keyword only.
+Found 20 tracks using simple mood search
+INFO:     [uagents.registration]: Registering on almanac contract...complete
+INFO:     [setup]: Adding testnet funds to agent...complete
+INFO:     [ui_agent]: Starting agent with address: agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Starting agent with address: agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Starting agent with address: agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Starting agent with address: agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Starting agent with address: agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8933&address=agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8933&address=agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8933&address=agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8933&address=agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8933&address=agent1q2earpd6tnyu5gxejktpz2wxrzwavurqxuwj3rdx20dl7687rlh96d6u77m
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8933 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8933 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8933 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8933 (Press CTRL+C to quit)
+INFO:     [ui_agent]: Starting server on http://0.0.0.0:8933 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: Registering on almanac contract...
+UI agent started successfully on port 8933
+INFO:     [uagents.registration]: Registering on almanac contract...complete
+  Stopping...
